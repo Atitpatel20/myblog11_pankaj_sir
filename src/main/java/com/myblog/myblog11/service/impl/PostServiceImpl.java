@@ -12,6 +12,7 @@ public class PostServiceImpl implements PostService {
     private PostRepository postRepository;
 
     public PostServiceImpl(PostRepository postRepository) {
+
         this.postRepository = postRepository;
     }
 
