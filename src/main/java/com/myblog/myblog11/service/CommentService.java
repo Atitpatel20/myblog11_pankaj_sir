@@ -7,5 +7,5 @@ public interface CommentService {
 
     void deleteCommentById(long id);
 
-    CommentsDto updateComments(long id, CommentsDto commentsDto);
+    CommentsDto updateComments(long id, CommentsDto commentsDto, long post_id);
 }

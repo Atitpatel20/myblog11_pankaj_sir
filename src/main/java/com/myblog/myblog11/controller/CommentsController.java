@@ -34,10 +34,10 @@ import org.springframework.web.bind.annotation.*;
         commentService.deleteCommentById(id);
         return new ResponseEntity<>("Record is deleted!!",HttpStatus.OK);
     }
-    // http://localhost:8080/api/comments/3
-    @PutMapping("/{id}")
-    public ResponseEntity<CommentsDto>updateComment(@PathVariable long id,@RequestBody CommentsDto commentsDto){
-        CommentsDto dto=commentService.updateComments(id,commentsDto);
+    // http://localhost:8080/api/comments/3/post/2
+    @PutMapping("/{id}/post/{post_id}")
+    public ResponseEntity<CommentsDto>updateComment(@PathVariable long id,@RequestBody CommentsDto commentsDto,@PathVariable long post_id){
+        CommentsDto dto=commentService.updateComments(id,commentsDto,post_id);
         return new ResponseEntity<>(dto,HttpStatus.OK);
     }
 }
