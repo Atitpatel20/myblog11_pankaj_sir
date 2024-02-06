@@ -30,6 +30,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers(HttpMethod.GET,"/api/**").permitAll() // Allow all users to access GET method
                 .antMatchers(HttpMethod.POST, "/create-post").hasRole("ADMIN") // Only admins can access POST method for creating a post
+                .antMatchers(HttpMethod.POST,"/api/auth").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .httpBasic(); // Use HTTP Basic Authentication
